@@ -38,5 +38,4 @@ public abstract class Employee {
     }
 
     abstract void work(); // Metodo abstracto
-
 }
