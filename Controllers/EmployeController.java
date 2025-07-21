@@ -3,6 +3,8 @@ package Controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import Controllers.Exceptions.DuplicateEmployeeException;
+import Controllers.Exceptions.EmployeeNotFoundException;
 import Model.Employee;
 
 public class EmployeController {
@@ -14,6 +16,11 @@ public class EmployeController {
     }
 
     public List<Employee> addEmployee(Employee employee) {
+        for (Employee e : employees) {
+            if (e.getWorkerId().equals(employee.getWorkerId())) {
+                throw new DuplicateEmployeeException(employee.getWorkerId());
+            }
+        }
         employees.add(employee);
         return employees;
     }
@@ -29,7 +36,7 @@ public class EmployeController {
                 return updatedEmployee;
             }
         }
-        return null; // o puedes lanzar una excepción
+        throw new EmployeeNotFoundException(id);
     }
 
     public Employee deleteEmployeeById(Integer id) {
@@ -38,6 +45,7 @@ public class EmployeController {
                 return employees.remove(i);
             }
         }
-        return null; // o puedes lanzar una excepción
+        throw new EmployeeNotFoundException(id);
     }
+
 }
