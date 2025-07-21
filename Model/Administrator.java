@@ -22,7 +22,7 @@ public class Administrator extends Employee implements Reportable {
     }
 
     @Override
-    public void trabajar() {
+    public void work() {
         System.out.println(getName() + " , esta gestionando recursos !!");
     }
 

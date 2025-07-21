@@ -37,6 +37,6 @@ public abstract class Employee {
         return "ID: " + workerId + "| Nombre: "+ name + " | Salario: " + salary + " | Horaio: " + schedule;
     }
 
-    abstract void trabajar(); // Metodo abstracto
+    abstract void work(); // Metodo abstracto
 
 }

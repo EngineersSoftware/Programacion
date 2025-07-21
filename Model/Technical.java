@@ -22,7 +22,7 @@ public class Technical extends Employee implements Reportable {
     }
 
     @Override
-    public void trabajar() {
+    public void work() {
          System.out.println(getName() + " , esta resolviendo problema en: "+ specializedArea + " !!");
     }
 

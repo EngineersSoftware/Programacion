@@ -23,7 +23,7 @@ public class Electrician extends Employee implements Reportable {
     }
 
     @Override
-    public void trabajar() {
+    public void work() {
         System.out.println(getName() + " , esta trabajando con certificacion electrica: " + electricalCertification +" !!");
     }
 
